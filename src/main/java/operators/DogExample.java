@@ -21,6 +21,10 @@ public class DogExample {
 		
 		System.out.println("Dog is " + spot.name + " says " + spot.says);
 		System.out.println("Dog is " + scruffy.name + " says " + scruffy.says);
+
+		Dog spotAnother = new Dog("spot","Ruff");
+		System.out.println("spot == : " + (spot == spotAnother));
+		System.out.println("spot equals : " + (spot.equals(spotAnother)));
 	}
 
 }
