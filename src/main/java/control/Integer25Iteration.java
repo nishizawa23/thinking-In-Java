@@ -20,6 +20,17 @@ public class Integer25Iteration {
 			else
 				System.out.println(j + " = " + k);
 		}
+		while(true){
+			j = mInteger.nextInt();	
+			System.out.println("j is " + j);
+			if(j > k)
+				System.out.println(j + " > " + k);
+			else if (j < k)
+				System.out.println(j + " < " + k);
+			else
+				System.out.println(j + " = " + k);
+
+		}
 	}
 }
 
