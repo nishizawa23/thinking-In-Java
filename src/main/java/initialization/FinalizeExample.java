@@ -20,6 +20,7 @@ public class FinalizeExample {
 		new FinalizeExample();
 		//Book mBook = new Book();
 		new Book();
+		// even if call System.gc(),not do finalize() every time
 		System.gc();
 	}
 // this is not sure to call, try more times!!
