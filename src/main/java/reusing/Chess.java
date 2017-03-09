@@ -18,6 +18,8 @@ class BoardGame extends Game {
 
 public class Chess extends BoardGame {
   Chess() {
+// it will be compiling error if base-class with no arg construction
+//    super();
     super(11);
     print("Chess constructor");
   }
