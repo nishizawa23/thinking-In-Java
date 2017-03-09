@@ -12,7 +12,8 @@ class Drawing extends Art {
 }
 
 public class Cartoon extends Drawing {
-  public Cartoon() { print("Cartoon constructor"); }
+//  Delete Cartoon's construction but base class construction can called by default
+//  public Cartoon() { print("Cartoon constructor"); }
   public static void main(String[] args) {
     Cartoon x = new Cartoon();
   }
