@@ -3,7 +3,11 @@ package reusing; /* Added by Eclipse.py */
 // Constructor calls during inheritance.
 import static net.mindview.util.Print.*;
 
-class Art {
+class base {
+  base(){ print("base constructor");}
+}
+
+class Art extends base {
   Art() { print("Art constructor"); }
 }
 
