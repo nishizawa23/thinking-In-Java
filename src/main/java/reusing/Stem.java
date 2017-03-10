@@ -6,17 +6,26 @@ class Component1{
 	Component1(int i){
 		System.out.println("Component1 constructor i "+i);
 	}
+	public void dispose(){
+		System.out.println("Component1 dispose");
+	}
 }
 
 class Component2{
 	Component2(int i){
 		System.out.println("Component2 constructor i "+i);
 	}
+	public void dispose(){
+		System.out.println("Component2 dispose");
+	}
 }
 
 class Component3{
 	Component3(int i){
 		System.out.println("Component3 constructor i "+i);
+	}
+	public void dispose(){
+		System.out.println("Component3 dispose");
 	}
 }
 
@@ -30,6 +39,12 @@ class Root {
 		mC2 = new Component2(i);
 		mC3 = new Component3(i);
 	}
+	public void dispose(){
+		System.out.println("Root dispose");
+		mC3.dispose();
+		mC2.dispose();
+		mC1.dispose();
+	}
 }
 
 public class Stem extends Root {
@@ -40,10 +55,18 @@ public class Stem extends Root {
 		mC2 = new Component2(12);
 		mC3 = new Component3(12);
 	}
+	public void dispose(){
+		super.dispose();
+		System.out.println("Stem dispose");
+		mC3.dispose();
+		mC2.dispose();
+		mC1.dispose();
+	}
 	public static void main (String [] args)
 	{
 		/* code */
 		Stem mS = new Stem(11);
+		mS.dispose();
 	}
 }
 
