@@ -11,6 +11,10 @@ class Amphibian {
 
 public class Frog extends Amphibian {
 
+	protected void hello (){
+		System.out.println("hello world from Frog");
+	}
+
 	public static void main (String [] args)
 	{
 		/* code */
