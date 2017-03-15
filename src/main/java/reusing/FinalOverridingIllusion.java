@@ -18,6 +18,11 @@ class OverridingPrivate extends WithFinals {
   private void g() {
     print("OverridingPrivate.g()");
   }
+
+  public final void h() {
+    print("OverridingPrivate.h()");
+  }
+
 }
 
 class OverridingPrivate2 extends OverridingPrivate {
@@ -28,6 +33,10 @@ class OverridingPrivate2 extends OverridingPrivate {
   public void g() {
     print("OverridingPrivate2.g()");
   }
+// cann't overriding public final method
+//  public void h(){
+//    print("OverridingPrivate2.h()");
+//  }
 }
 
 public class FinalOverridingIllusion {
@@ -35,6 +44,7 @@ public class FinalOverridingIllusion {
     OverridingPrivate2 op2 = new OverridingPrivate2();
     op2.f();
     op2.g();
+    op2.h();
     // You can upcast:
     OverridingPrivate op = op2;
     // But you can't call the methods:
