@@ -6,6 +6,7 @@ class SmallBrain {}
 
 final class Dinosaur {
   int i = 7;
+  //final int i = 7;
   int j = 1;
   SmallBrain x = new SmallBrain();
   void f() {}
@@ -13,6 +14,8 @@ final class Dinosaur {
 
 //! class Further extends Dinosaur {}
 // error: Cannot extend final class 'Dinosaur'
+
+//class Test extends Dinosaur{}
 
 public class Jurassic {
   public static void main(String[] args) {
