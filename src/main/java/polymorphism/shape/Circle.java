@@ -7,4 +7,7 @@ public class Circle extends Shape {
   public void draw() { print("Circle.draw()"); }
   @Override
   public void erase() { print("Circle.erase()"); }
+  public void hello(){
+	System.out.println("Circle hello world");
+  }
 } ///:~
