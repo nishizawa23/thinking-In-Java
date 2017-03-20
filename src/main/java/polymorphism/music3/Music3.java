@@ -59,6 +59,8 @@ public class Music3 {
       new Woodwind()
     };
     tuneAll(orchestra);
+    System.out.println("Wind toString " + new Wind());
+    System.out.println("Wind toString " + new Brass());
   }
 } /* Output:
 Wind.play() MIDDLE_C
