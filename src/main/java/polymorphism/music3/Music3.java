@@ -2,6 +2,7 @@
 // An extensible program.
 package polymorphism.music3;
 import polymorphism.music.Note;
+import java.util.*;
 import static net.mindview.util.Print.*;
 
 class Instrument {
@@ -44,6 +45,21 @@ class Woodwind extends Wind {
   String what() { return "Woodwind"; }
 }	
 
+class Generator{
+	private Random mRandom = new Random(47);
+	public Instrument next(){
+		switch (mRandom.nextInt(5)){
+			default:
+			case 0: return new Wind();
+			case 1: return new Percussion();
+			case 2: return new Stringed();
+			case 3: return new Brass();
+			case 4: return new Woodwind();
+			case 5: return new Pimo();
+		}
+	}
+}
+
 public class Music3 {
   // Doesn't care about type, so new types
   // added to the system still work right:
@@ -55,8 +71,12 @@ public class Music3 {
     for(Instrument i : e)
       tune(i);
   }	
+
+  private static Generator mG = new Generator();
+
   public static void main(String[] args) {
     // Upcasting during addition to the array:
+/*
     Instrument[] orchestra = {
       new Wind(),
       new Percussion(),
@@ -65,6 +85,11 @@ public class Music3 {
       new Woodwind(),
       new Pimo()
     };
+*/
+    Instrument[] orchestra = new Instrument[10];
+    for(int i=0; i<orchestra.length;i++)
+	orchestra[i] = mG.next();
+	
     tuneAll(orchestra);
     System.out.println("Wind toString " + new Wind());
     System.out.println("Wind toString " + new Brass());
