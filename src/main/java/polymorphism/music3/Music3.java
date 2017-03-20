@@ -10,6 +10,12 @@ class Instrument {
   void adjust() { print("Adjusting Instrument"); }
 }
 
+class Pimo extends Instrument {
+  void play(Note n) { print("Pimo.play() " + n); }
+  String what() { return "Pimo"; }
+  void adjust() { print("Adjusting Pimo"); }
+}	
+
 class Wind extends Instrument {
   void play(Note n) { print("Wind.play() " + n); }
   String what() { return "Wind"; }
@@ -56,7 +62,8 @@ public class Music3 {
       new Percussion(),
       new Stringed(),
       new Brass(),
-      new Woodwind()
+      new Woodwind(),
+      new Pimo()
     };
     tuneAll(orchestra);
     System.out.println("Wind toString " + new Wind());
