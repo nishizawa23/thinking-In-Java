@@ -4,6 +4,17 @@ import java.util.*;
 
 class Mouse extends Rodent {
 
+	int i = initFM();
+
+	public int initFM(){
+		System.out.println("Mouse int i init");
+		return 0;
+	}
+
+	Mouse(){
+		System.out.println("Mouse construction");
+	}
+
 	public void hello(){
 		System.out.println("Mouse hello");
 	}
@@ -11,12 +22,22 @@ class Mouse extends Rodent {
 
 class Gerbil extends Rodent {
 	
+
+	Gerbil(){
+		System.out.println("Gerbil construction");
+	}
+
 	public void hello(){
 		System.out.println("Gerbil hello");
 	}
 }
 
 class Hamster extends Rodent {
+
+
+	Hamster(){
+		System.out.println("Hamster construction");
+	}
 
 	public void hello(){
 		System.out.println("Hamster hello");
@@ -53,6 +74,17 @@ class RodentFactory {
 }
 
 public class Rodent {
+
+	int i = initF();
+
+	public int initF(){
+		System.out.println("Rodent int i init");
+		return 0;
+	}
+
+	Rodent(){
+		System.out.println("Rodent construction");
+	}
 
 	public void hello(){
 		System.out.println("Rodent hello");
