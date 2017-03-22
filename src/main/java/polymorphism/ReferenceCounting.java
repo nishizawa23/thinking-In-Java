@@ -11,6 +11,7 @@ class Shared {
     print("Creating " + this);
   }
   public void addRef() { refcount++; }
+  public int getRef(){ return refcount;}
   protected void dispose() {
     if(--refcount == 0)
       print("Disposing " + this);
@@ -32,6 +33,7 @@ class Composing {
     shared.dispose();
   }
   public String toString() { return "Composing " + id; }
+
 }
 
 public class ReferenceCounting {
@@ -40,8 +42,14 @@ public class ReferenceCounting {
     Composing[] composing = { new Composing(shared),
       new Composing(shared), new Composing(shared),
       new Composing(shared), new Composing(shared) };
-    for(Composing c : composing)
+    for(Composing c : composing){
       c.dispose();
+    }
+      System.gc();
+  }
+
+  protected void finalize(){
+	System.out.println("finalize()");
   }
 } /* Output:
 Creating Shared 0
