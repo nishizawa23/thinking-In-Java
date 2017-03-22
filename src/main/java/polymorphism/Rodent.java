@@ -4,6 +4,20 @@ import java.util.*;
 
 class Mouse extends Rodent {
 
+	private int refcount = 0;
+
+	private static int Share_id  = 0;
+	public int id = Share_id++;
+
+	public void addRef(){
+		refcount++;
+	}
+
+	public void dispose(){
+		if(--refcount == 0)
+			System.out.println("Mouse dispose");
+	}
+
 	int i = initFM();
 
 	public int initFM(){
@@ -77,6 +91,7 @@ public class Rodent {
 
 	int i = initF();
 
+
 	public int initF(){
 		System.out.println("Rodent int i init");
 		return 0;
@@ -103,5 +118,8 @@ public class Rodent {
 
 		for(Rodent r : mRodentList)
 			r.hello();
+		Mouse mMouse = new Mouse();
+		mMouse.addRef();
+		mMouse.dispose();
 	}
 }
