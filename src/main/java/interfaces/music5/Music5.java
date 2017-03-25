@@ -12,27 +12,39 @@ interface Instrument {
   void adjust();
 }
 
-class Wind implements Instrument {
+abstract class Wind implements Instrument {
   public void play(Note n) {
     print(this + ".play() " + n);
   }
-  public String toString() { return "Wind"; }
+  public abstract String toString();
   public void adjust() { print(this + ".adjust()"); }
 }
 
-class Percussion implements Instrument {
-  public void play(Note n) {
-    print(this + ".play() " + n);
-  }
+abstract class Percussion implements Instrument {
+  public abstract void play(Note n);
   public String toString() { return "Percussion"; }
   public void adjust() { print(this + ".adjust()"); }
 }
 
-class Stringed implements Instrument {
+class BluePercussion extends Percussion {
   public void play(Note n) {
     print(this + ".play() " + n);
   }
+  public String toString() { return "BluePercussion"; }
+  public void adjust() { print(this + ".adjust()"); }
+}
+
+abstract class Stringed implements Instrument {
+  public abstract void play(Note n);
   public String toString() { return "Stringed"; }
+  public void adjust() { print(this + ".adjust()"); }
+}
+
+class RedStringed extends Stringed {
+  public void play(Note n) {
+    print(this + ".play() " + n);
+  }
+  public String toString() { return "RedStringed"; }
   public void adjust() { print(this + ".adjust()"); }
 }
 
@@ -58,9 +70,9 @@ public class Music5 {
   public static void main(String[] args) {
     // Upcasting during addition to the array:
     Instrument[] orchestra = {
-      new Wind(),
-      new Percussion(),
-      new Stringed(),
+//      new Wind(),
+      new BluePercussion(),
+      new RedStringed(),
       new Brass(),
       new Woodwind()
     };
