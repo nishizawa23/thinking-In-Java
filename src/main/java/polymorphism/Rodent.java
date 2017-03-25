@@ -2,7 +2,7 @@ package polymorphism;
 
 import java.util.*;
 
-class Mouse extends Rodent {
+class Mouse implements Rodent {
 
 	private int refcount = 0;
 
@@ -34,7 +34,7 @@ class Mouse extends Rodent {
 	}
 }
 
-class Gerbil extends Rodent {
+class Gerbil implements Rodent {
 	
 
 	Gerbil(){
@@ -46,7 +46,7 @@ class Gerbil extends Rodent {
 	}
 }
 
-class Hamster extends Rodent {
+class Hamster implements Rodent {
 
 
 	Hamster(){
@@ -87,8 +87,8 @@ class RodentFactory {
 	}
 }
 
-abstract class Rodent {
-
+interface Rodent {
+/*
 	int i = initF();
 
 
@@ -100,8 +100,8 @@ abstract class Rodent {
 	Rodent(){
 		System.out.println("Rodent construction");
 	}
-
-	abstract void hello();
+*/
+	void hello();
 
 	public static void main (String [] args)
 	{
