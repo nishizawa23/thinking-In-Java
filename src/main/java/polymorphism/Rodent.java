@@ -87,7 +87,7 @@ class RodentFactory {
 	}
 }
 
-public class Rodent {
+abstract class Rodent {
 
 	int i = initF();
 
@@ -101,9 +101,7 @@ public class Rodent {
 		System.out.println("Rodent construction");
 	}
 
-	public void hello(){
-		System.out.println("Rodent hello");
-	}
+	abstract void hello();
 
 	public static void main (String [] args)
 	{
