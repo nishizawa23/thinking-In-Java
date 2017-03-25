@@ -4,15 +4,19 @@ package interfaces.music5;
 import polymorphism.music.Note;
 import static net.mindview.util.Print.*;
 
+interface Playable {
+	void play(Note n);
+}
+
 interface Instrument {
   // Compile-time constant:
   int VALUE = 5; // static & final
   // Cannot have method definitions:
-  void play(Note n); // Automatically public
+//  void play(Note n); // Automatically public
   void adjust();
 }
 
-abstract class Wind implements Instrument {
+abstract class Wind implements Instrument,Playable {
   public void play(Note n) {
     print(this + ".play() " + n);
   }
@@ -20,7 +24,7 @@ abstract class Wind implements Instrument {
   public void adjust() { print(this + ".adjust()"); }
 }
 
-abstract class Percussion implements Instrument {
+abstract class Percussion implements Instrument,Playable {
   public abstract void play(Note n);
   public String toString() { return "Percussion"; }
   public void adjust() { print(this + ".adjust()"); }
@@ -34,7 +38,7 @@ class BluePercussion extends Percussion {
   public void adjust() { print(this + ".adjust()"); }
 }
 
-abstract class Stringed implements Instrument {
+abstract class Stringed implements Instrument,Playable {
   public abstract void play(Note n);
   public String toString() { return "Stringed"; }
   public void adjust() { print(this + ".adjust()"); }
@@ -59,17 +63,17 @@ class Woodwind extends Wind {
 public class Music5 {
   // Doesn't care about type, so new types
   // added to the system still work right:
-  static void tune(Instrument i) {
+  static void tune(Playable i) {
     // ...
     i.play(Note.MIDDLE_C);
   }
-  static void tuneAll(Instrument[] e) {
-    for(Instrument i : e)
+  static void tuneAll(Playable[] e) {
+    for(Playable i : e)
       tune(i);
   }	
   public static void main(String[] args) {
     // Upcasting during addition to the array:
-    Instrument[] orchestra = {
+    Playable[] orchestra = {
 //      new Wind(),
       new BluePercussion(),
       new RedStringed(),
