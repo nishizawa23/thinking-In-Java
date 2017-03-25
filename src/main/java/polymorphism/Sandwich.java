@@ -31,14 +31,22 @@ class PortableLunch extends Lunch {
   PortableLunch() { print("PortableLunch()");}
 }
 
-public class Sandwich extends PortableLunch {
+interface FastFood {
+	void what();
+}
+
+public class Sandwich extends PortableLunch implements FastFood {
   private Bread b = new Bread();
   private Cheese c = new Cheese();
   private Lettuce l = new Lettuce();
   private Pickle p = new Pickle();
   public Sandwich() { print("Sandwich()"); }
   public static void main(String[] args) {
-    new Sandwich();
+    Sandwich mS = new Sandwich();
+	mS.what();
+  }
+  public void what(){
+		System.out.println("i am Sandwich");
   }
 } /* Output:
 Meal()
