@@ -15,8 +15,8 @@ interface Three {
 	void three_2();
 }
 
-interface Four extends One,Two,Three{
-	void four();
+abstract class Four implements One,Two,Three{
+	abstract void four();
 }
 
 class ShowInterface {
@@ -49,7 +49,7 @@ class ShowInterface {
 	}
 }
 
-public class Exercise14 implements One,Two,Three,Four {
+public class Exercise14 extends Four implements One,Two,Three{
 
 	public void one_1(){
 		System.out.println("one_1");
