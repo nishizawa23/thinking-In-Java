@@ -12,6 +12,13 @@ class Outer {
 		}
 	}
 
+	class Inner2 {
+		@Override
+		public String toString(){
+			return "Inner2";
+		}
+	}
+
 	Outer(){
 		mString = "hello world!";
 	}
@@ -32,5 +39,9 @@ class Exercise2 {
 			o = new Outer();
 			System.out.println(o.new Inner());
 		}
+
+		Outer mOuter = new Outer();
+		Outer.Inner2 mInner2 = mOuter.new Inner2();
+		System.out.println(mInner2);
 	}
 }
