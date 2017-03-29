@@ -6,6 +6,7 @@ interface Selector {
   boolean end();
   Object current();
   void next();
+  Object [] getSequence();
 }	
 
 public class Sequence {
@@ -21,6 +22,9 @@ public class Sequence {
     public boolean end() { return i == items.length; }
     public Object current() { return items[i]; }
     public void next() { if(i < items.length) i++; }
+	public Object [] getSequence(){
+		return items;
+	}
   }
   public Selector selector() {
     return new SequenceSelector();
@@ -34,6 +38,10 @@ public class Sequence {
       System.out.print(selector.current() + " ");
       selector.next();
     }
+    Object [] mSS = selector.getSequence();
+	for(int j = 0; j < 10; j++){
+		System.out.println(mSS[j]);
+	}
   }
 } /* Output:
 0 1 2 3 4 5 6 7 8 9
