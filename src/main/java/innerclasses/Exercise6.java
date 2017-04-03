@@ -8,7 +8,8 @@ public class Exercise6 extends Hello{
 	{
 		/* code */
 		Exercise6 mE6 = new Exercise6();
-		HelloInterface mHelloInner = mE6.getHelloInterface();
-		mHelloInner.hello();
+		//HelloInterface mHelloInner = mE6.getHelloInterface();
+		HelloInterface mHelloInterface = mE6.new HelloInner();
+		mHelloInterface.hello();
 	}
 }
