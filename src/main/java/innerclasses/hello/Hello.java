@@ -12,6 +12,9 @@ public class Hello {
 	}
 
 	protected class HelloInner implements HelloInterface {
+
+		private int i = 9;
+
 		public void hello(){
 			System.out.println("hello world !");
 		}
@@ -31,6 +34,7 @@ public class Hello {
 	}
 
 	public HelloInner getHelloInner(){
+		int j = new HelloInner().i;
 		return new HelloInner();
 	}
 }
