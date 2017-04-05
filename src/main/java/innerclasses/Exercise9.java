@@ -9,19 +9,26 @@ interface Hello {
 public class Exercise9 {
 
 
-	public Hello getHelloInterface(){
-		class EInner implements Hello {
-			public void hello(){
-				System.out.println("hello world");
+	public Hello getHelloInterface(int i){
+		if(i > 100){
+			class EInner implements Hello {
+				public void hello(){
+					System.out.println("hello world");
+				}
 			}
+			return new EInner();
+		}else{
+			return null;
 		}
-		return new EInner();
 	}
 
 	public static void main (String [] args)
 	{
 		/* code */
-		Hello mHello = new Exercise9().getHelloInterface();
-		mHello.hello();
+		Hello mHello = new Exercise9().getHelloInterface(101);
+		if(mHello != null)
+			mHello.hello();
+		else
+			System.out.println("mHello is null");
 	}
 }
