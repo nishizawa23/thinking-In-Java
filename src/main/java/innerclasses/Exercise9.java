@@ -8,6 +8,16 @@ interface Hello {
 
 public class Exercise9 {
 
+	private class InnerHello implements Hello{
+		public void hello(){
+				System.out.println("i am InnerHello hello !");
+		}
+	}
+
+	public Hello getInnerHello(){
+		return new InnerHello();
+	}
+
 
 	public Hello getHelloInterface(int i){
 		if(i > 100){
@@ -30,5 +40,8 @@ public class Exercise9 {
 			mHello.hello();
 		else
 			System.out.println("mHello is null");
+
+		Hello mHelloInner = new Exercise9().getInnerHello();
+		mHelloInner.hello();
 	}
 }
