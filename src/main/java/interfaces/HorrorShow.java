@@ -38,10 +38,21 @@ public class HorrorShow {
   }
   static void w(Lethal l) { l.kill(); }
   public static void main(String[] args) {
-    DangerousMonster barney = new DragonZilla();
+    //DangerousMonster barney = new DragonZilla();
+    DangerousMonster barney = new DangerousMonster(){
+  		public void menace() {}
+  		public void destroy() {}
+	};
     u(barney);
     v(barney);
-    Vampire vlad = new VeryBadVampire();
+    //Vampire vlad = new VeryBadVampire();
+    Vampire vlad = new Vampire(){
+
+  		public void menace() {}
+  		public void destroy() {}
+  		public void kill() {}
+  		public void drinkBlood() {}
+	};
     u(vlad);
     v(vlad);
     w(vlad);
