@@ -24,13 +24,21 @@ interface Factory{
 
 class CoinFactory implements Factory{
 	public Tossing getTossing(){
-		return new CoinTossing();
+		return new Tossing(){
+			public void go(){
+				System.out.println("CoinTossing go");
+			}
+		};
 	}
 } 
 
 class DiceFactory implements Factory{
 	public Tossing getTossing(){
-		return new DiceTossing();
+		return new Tossing(){
+			public void go(){
+				System.out.println("DiceTossing go");
+			}
+		};
 	}
 }
 
