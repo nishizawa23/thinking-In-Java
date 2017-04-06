@@ -15,7 +15,11 @@ public class Exercise9 {
 	}
 
 	public Hello getInnerHello(){
-		return new InnerHello();
+		return new Hello(){
+			public void hello(){
+				System.out.println("i am nouyce hello!");
+			}
+		};
 	}
 
 
