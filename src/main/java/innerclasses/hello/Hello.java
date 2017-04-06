@@ -37,4 +37,22 @@ public class Hello {
 		int j = new HelloInner().i;
 		return new HelloInner();
 	}
+
+	public HelloInterface getHelloInterface(){
+		return new HelloInterface(){
+
+			public void hello(){
+				System.out.println("nm hello world apple "+apple);
+			}
+
+			public void setAppleNumber(int n){
+				apple = n;
+			}
+
+			public void print(){
+				printApple();
+			}
+		};
+	}
+
 }

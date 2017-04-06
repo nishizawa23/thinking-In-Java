@@ -15,5 +15,10 @@ public class Exercise6 extends Hello{
 		Hello.HelloInner mHelloInner = mE6.getHelloInner();
 		mHelloInner.setAppleNumber(10);
 		mHelloInner.print();
+
+		HelloInterface mHelloInterface2 = mE6.getHelloInterface();
+		mHelloInterface2.setAppleNumber(99);
+		mHelloInterface2.print();
+		mHelloInterface2.hello();
 	}
 }
