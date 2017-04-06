@@ -30,19 +30,31 @@ interface Factory {
 
 class FactoryUnicycle implements Factory{
 	public Cycle get_cycle(){
-		return new Unicycle();
+		return new Cycle(){
+			public void go(){
+				System.out.println("Unicycle go ");
+			}
+		};
 	}
 }
 
 class FactoryBicycle implements Factory{
 	public Cycle get_cycle(){
-		return new Bicycle();
+		return new Cycle(){
+			public void go(){
+				System.out.println("Bicycle go ");
+			}
+		};
 	}
 }
 
 class FactoryTricycle implements Factory{
 	public Cycle get_cycle(){
-		return new Tricycle();
+		return new Cycle(){
+			public void go(){
+				System.out.println("Tricycle go ");
+			}
+		};
 	}
 }
 
