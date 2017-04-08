@@ -7,6 +7,27 @@ package innerclasses; /* Added by Eclipse.py */
 import innerclasses.controller.*;
 
 public class GreenhouseControls extends Controller {
+
+  private boolean fan = false;
+
+  public class FanOn extends Event {
+		public FanOn(long delayTime){ super(delayTime);}
+		public void action(){
+			fan = true;
+		}
+
+    	public String toString() { return "Fan is on"; }
+  }
+
+  public class FanOff extends Event {
+		public FanOff(long delayTime){ super(delayTime);}
+		public void action(){
+			fan = false;
+		}
+
+    	public String toString() { return "Fan is off"; }
+  }
+
   private boolean light = false;
   public class LightOn extends Event {
     public LightOn(long delayTime) { super(delayTime); }

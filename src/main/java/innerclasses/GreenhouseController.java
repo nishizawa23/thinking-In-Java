@@ -12,6 +12,8 @@ public class GreenhouseController {
     gc.addEvent(gc.new Bell(900));
     Event[] eventList = {
       gc.new ThermostatNight(0),
+	  gc.new FanOn(50),
+	  gc.new FanOff(100),
       gc.new LightOn(200),
       gc.new LightOff(400),
       gc.new WaterOn(600),
