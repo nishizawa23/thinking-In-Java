@@ -108,14 +108,25 @@ interface Rodent {
 		/* code */
 		RodentFactory mRF = RodentFactory.getFactory();
 
-		Rodent [] mRodentList = new Rodent[3];
-
+//		Rodent [] mRodentList = new Rodent[3];
+		ArrayList<Rodent> mRodentList = new ArrayList<Rodent>();
+/*
 		for(int i = 0; i < mRodentList.length; i++){
 			mRodentList[i] = mRF.getRodent(i);
 		}
+*/
 
+		for(int i = 0; i < 3; i++){
+			mRodentList.add(mRF.getRodent(i));
+		}
+/*
 		for(Rodent r : mRodentList)
 			r.hello();
+*/
+		Iterator<Rodent> mR = mRodentList.iterator();
+		while(mR.hasNext())
+			mR.next().hello();
+
 		Mouse mMouse = new Mouse();
 		mMouse.addRef();
 		mMouse.dispose();
