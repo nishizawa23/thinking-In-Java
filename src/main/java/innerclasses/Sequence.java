@@ -42,8 +42,9 @@ public class Sequence {
 	}
   }
 
-  public Selector selector() {
-    return new SequenceSelector();
+  public Iterator<String> selector() {
+//    return new SequenceSelector();
+	  return mList.iterator();
   }	
 
   public Selector reverseSelector() {
@@ -54,12 +55,17 @@ public class Sequence {
     //ArrayList <Sequence> mList = new ArrayList<Sequence>();
     for(int i = 0; i < 20; i++)
       sequence.add(Integer.toString(i));
-    Selector selector = sequence.selector();
-
+//    Selector selector = sequence.selector();
+	  Iterator<String> mS = sequence.selector();
+/*
     while(!selector.end()) {
       System.out.print(selector.current() + " ");
       selector.next();
     }
+*/
+	while(mS.hasNext()){
+		System.out.println(mS.next());
+	}
 /*
     Selector reverseSelector = sequence.reverseSelector();
     while(!reverseSelector.end()) {
@@ -69,11 +75,12 @@ public class Sequence {
 */
 
 	System.out.println();
-
+/*
     Object [] mSS = selector.getSequence();
 	for(int j = 0; j < mSS.length; j++){
 		System.out.println(mSS[j]);
 	}
+*/
   }
 } /* Output:
 0 1 2 3 4 5 6 7 8 9
