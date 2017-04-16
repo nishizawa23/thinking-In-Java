@@ -9,6 +9,12 @@ public class Gerbil {
 		System.out.println("jump hop id " + number);
 	}
 
+	public void display(Iterator<Gerbil> g){
+		while(g.hasNext()){
+			g.next().hop();
+		}
+	}
+
 	public static void main (String [] args)
 	{
 		/* code */
@@ -18,5 +24,7 @@ public class Gerbil {
 
 		for(int i = 0; i < mGerbilList.size(); i++)
 			mGerbilList.get(i).hop();
+
+		new Gerbil().display(mGerbilList.iterator());
 	}
 }
