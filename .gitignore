@@ -27,3 +27,5 @@ $*
 src/main/webapp/static/css/**/*.css*
 */*.py
 *.class
+.gradle/
+build/
