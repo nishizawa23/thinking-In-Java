@@ -5,9 +5,11 @@ import java.util.*;
 
 public class Controller {
   // A class from java.util to hold Event objects:
-  private List<Event> eventList = new ArrayList<Event>();
+//  private List<Event> eventList = new ArrayList<Event>();
+  private List<Event> eventList = new LinkedList<Event>();
   public void addEvent(Event c) { eventList.add(c); }
   public void run() {
+/*
     while(eventList.size() > 0)
       // Make a copy so you're not modifying the list
       // while you're selecting the elements in it:
@@ -17,5 +19,16 @@ public class Controller {
           e.action();
           eventList.remove(e);
         }
+*/
+	Iterator<Event> mIteratorEvent = eventList.iterator();
+
+	while(mIteratorEvent.hasNext()){
+		Event e = mIteratorEvent.next();
+		if(e.ready()) {
+          System.out.println(e);
+          e.action();
+//          eventList.remove(e);
+        }
+	}
   }
 } ///:~

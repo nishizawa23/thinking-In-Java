@@ -98,7 +98,8 @@ public class GreenhouseControls extends Controller {
   public class Bell extends Event {
     public Bell(long delayTime) { super(delayTime); }
     public void action() {
-      addEvent(new Bell(delayTime));
+// when in iterator,you cann't add or remove in List<>
+//      addEvent(new Bell(delayTime));
     }
     public String toString() { return "Bing!"; }
   }	
@@ -111,12 +112,15 @@ public class GreenhouseControls extends Controller {
         addEvent(e);
     }
     public void action() {
+// when in iterator,you cann't add or remove in List<>
+/*
       for(Event e : eventList) {
         e.start(); // Rerun each event
         addEvent(e);
       }
       start(); // Rerun this Event
       addEvent(this);
+*/
     }
     public String toString() {
       return "Restarting system";
