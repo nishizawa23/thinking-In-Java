@@ -19,12 +19,20 @@ public class Gerbil {
 	{
 		/* code */
 		ArrayList<Gerbil> mGerbilList = new ArrayList<Gerbil>();
-		for(int i = 0; i < 10; i++)
+		Map<Integer,Gerbil> mMap = new HashMap<Integer,Gerbil>();
+		for(int i = 0; i < 10; i++){
 			mGerbilList.add(new Gerbil());
+			mMap.put(i,new Gerbil());
+		}
 
 		for(int i = 0; i < mGerbilList.size(); i++)
 			mGerbilList.get(i).hop();
 
 		new Gerbil().display(mGerbilList.iterator());
+
+		for(int i : mMap.keySet()){
+			System.out.println("no i " + i);
+			mMap.get(i).hop();
+		}
 	}
 }
