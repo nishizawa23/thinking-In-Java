@@ -18,7 +18,7 @@ public class Exercise20 {
 	public static void main (String [] args)
 	{
 		/* code */
-		ArrayList<String> mStrings = new TextFile("holding/UniqueWords.java");
+		ArrayList<String> mStrings = new TextFile("holding/UniqueWords.java","\\W+");
 
 		System.out.println(mStrings);
 
