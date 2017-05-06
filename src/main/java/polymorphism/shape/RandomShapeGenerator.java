@@ -8,6 +8,7 @@ public class RandomShapeGenerator implements Iterable<Shape>{
   private Random rand = new Random(47);
   private int number;
   private int index = 0;
+  private Shape[] mShapes;
   public Shape next() {
     switch(rand.nextInt(4)) {
       default:
@@ -19,6 +20,9 @@ public class RandomShapeGenerator implements Iterable<Shape>{
   }
   RandomShapeGenerator(int n){
 	  number = n;
+	  mShapes = new Shape[n];
+	  for(int i = 0; i < n ; i++)
+		  mShapes[i] = next();
   }
   public Iterator<Shape> iterator(){
 	  return new Iterator<Shape>(){
@@ -32,7 +36,7 @@ public class RandomShapeGenerator implements Iterable<Shape>{
 			  }
 		  }
 	  	public Shape next(){
-			  return new Car();
+			  return mShapes[index - 1];
 	  	}
 		public void remove(){
 			throw new UnsupportedOperationException();
