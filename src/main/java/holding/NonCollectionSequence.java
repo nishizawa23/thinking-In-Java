@@ -20,10 +20,35 @@ public class NonCollectionSequence extends PetSequence {
       }
     };
   }
+  public Iterator<Pet> reversed(){
+	  return new Iterator<Pet>(){
+		  int current = pets.length - 1;
+		  public boolean hasNext( ){return current > -1;}
+		  public Pet next(){ return pets[current -- ];}
+		  public void remove(){
+			  throw new UnsupportedOperationException();
+		  }
+	  };
+  }
+
+  public Iterable<Pet> randomized(){
+	  return new Iterable<Pet>(){
+		  public Iterator<Pet> iterator(){
+			  List<Pet> shuffled = 
+				  new ArrayList<Pet>(Arrays.asList(pets));
+			  Collections.shuffle(
+					  shuffled,new Random(47));
+			  return shuffled.iterator();
+		  }
+	  };
+  }
   public static void main(String[] args) {
     NonCollectionSequence nc = new NonCollectionSequence();
     InterfaceVsIterator.display(nc.iterator());
+    InterfaceVsIterator.display(nc.reversed());
+    for(Pet p : nc.randomized())
+	    System.out.println(p);
   }
-} /* Output:
+} /* Output
 0:Rat 1:Manx 2:Cymric 3:Mutt 4:Pug 5:Cymric 6:Pug 7:Manx
 *///:~
