@@ -20,6 +20,8 @@ public class Exercise1{
 			new Exercise1().f();
 		} catch(MyException e){
 			e.printStackTrace(System.out);
+		} finally{
+			System.out.println("i am here");
 		}
 		
 	}
