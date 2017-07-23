@@ -5,18 +5,14 @@ import java.util.*;
 class OneException extends Exception {
 }
 
-class TwoException extends Exception {
-}
-
 public class Exercise10 {
 
-        static void f() throws TwoException {
+        static void f() {
                 System.out.println("f() function call g()");
                 try {
                         g();
                 } catch (OneException e) {
-                        e.printStackTrace();
-                        throw new TwoException();
+                        throw new RuntimeException(e);
                 }
         }
 
@@ -26,10 +22,6 @@ public class Exercise10 {
         }
 
         public static void main(String[] args) {
-                try {
-                       f(); 
-                } catch(TwoException e){
-                        e.printStackTrace();
-                }
+                f();
         }
 }
