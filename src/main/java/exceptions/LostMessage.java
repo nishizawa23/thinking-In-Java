@@ -37,6 +37,8 @@ public class LostMessage {
                         LostMessage lm = new LostMessage();
                         try {
                                 lm.f();
+                        } catch (VeryImportantException e) {
+                                System.out.println(e);
                         } finally {
                                 lm.dispose();
                         }
