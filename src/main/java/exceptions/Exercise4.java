@@ -13,19 +13,20 @@ class MyExceprtion1 extends Exception {
 
 public class Exercise4 {
 
-        public void f() throws MyExceprtion1 {
-                throw new MyExceprtion1("hello");
+    //    public void f() throws MyExceprtion1 {
+        public void f() {
+                throw new RuntimeException(new MyExceprtion1("hello"));
         }
 
         public static void main(String[] args) {
-                try {
+    //            try {
                         new Exercise4().f();
-                } catch (MyExceprtion1 e) {
-                        e.printStackTrace(System.out);
-                        System.out.println(e.mString);
-                } finally {
-                        System.out.println("i am here");
-                }
+    //            } catch (MyExceprtion1 e) {
+    //                    e.printStackTrace(System.out);
+    //                    System.out.println(e.mString);
+    //            } finally {
+    //                    System.out.println("i am here");
+    //            }
 
         }
 }
