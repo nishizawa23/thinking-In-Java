@@ -15,6 +15,7 @@ public class WithFinally {
       System.out.println("OnOffException2");
     } finally {
       sw.off();
+      System.out.println("in fainlly i has called off()");
     }
   }
 } /* Output:
