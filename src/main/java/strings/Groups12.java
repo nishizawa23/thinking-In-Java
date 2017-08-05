@@ -15,7 +15,7 @@ public class Groups12 {
   private static HashMap<String, Integer> mHashMap = new HashMap<String, Integer>();
   public static void main(String[] args) {
     Matcher m =
-      Pattern.compile("(?m)([a-zA-Z]+)")
+      Pattern.compile("(?m)(\\b[a-z]+)")
         .matcher(POEM);
     while(m.find()) {
     	System.out.println(m.groupCount() + " " + m.group());
