@@ -17,9 +17,9 @@ class Cookie {
 
 public class SweetShop {
   public static void main(String[] args) {	
-    print("inside main");
-    new Candy();
-    print("After creating Candy");
+//    print("inside main");
+//    new Candy();
+//    print("After creating Candy");
     try {
       Class.forName("Gum");
     } catch(ClassNotFoundException e) {
@@ -28,6 +28,16 @@ public class SweetShop {
     print("After Class.forName(\"Gum\")");
     new Cookie();
     print("After creating Cookie");
+
+    print(args[0]);
+
+    if(args.length > 1 || args[0].equals("Candy")){
+            try {
+                Class mClassCandy = Class.forName("typeinfo.Candy");
+            } catch(ClassNotFoundException e){
+                    e.printStackTrace();
+            }
+    }
   }
 } /* Output:
 inside main
