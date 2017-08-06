@@ -10,6 +10,7 @@ interface Shoots {}
 class Toy {
   // Comment out the following default constructor
   // to see NoSuchMethodError from (*1*)
+  // delete default constructor will fail whit newInstance 
   Toy() {}
   Toy(int i) {}
 }
