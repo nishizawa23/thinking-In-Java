@@ -7,11 +7,15 @@ abstract class Shape {
                 System.out.println(this + ".draw()");
         }
         abstract public String toString();
+        abstract public void rotate();
 }
 
 class Circle extends Shape {
         public String toString() {
                 return "Circle";
+        }
+        public void rotate(){
+                System.out.println("Circle rotate");
         }
 }
 
@@ -19,11 +23,17 @@ class Square extends Shape {
         public String toString() {
                 return "Square";
         }
+        public void rotate(){
+                System.out.println("Square rotate");
+        }
 }
 
 class Triangle extends Shape {
         public String toString() {
                 return "Triangle";
+        }
+        public void rotate(){
+                System.out.println("Triangle rotate");
         }
 }
 
@@ -31,15 +41,21 @@ class Rhomboid extends Shape {
         public String toString() {
                 return "Rhomboid";
         }
+        public void rotate(){
+                System.out.println("Rhomboid rotate");
+        }
 }
 
 public class Shapes {
         public static void main(String[] args) {
                 List<Shape> shapeList = Arrays.asList(
-                                                new Circle(), new Square(), new Triangle()
+                                                new Circle(), new Square(), new Triangle(), new Rhomboid()
                                         );
-                for (Shape shape : shapeList)
+                for (Shape shape : shapeList){
                         shape.draw();
+                        if(!(shape instanceof Circle))
+                                shape.rotate();
+                }
 
                 Rhomboid mR = new Rhomboid();
                 Shape mS = (Shape)mR;
