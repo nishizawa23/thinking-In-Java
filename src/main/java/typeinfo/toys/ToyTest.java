@@ -6,6 +6,7 @@ import static net.mindview.util.Print.*;
 interface HasBatteries {}
 interface Waterproof {}
 interface Shoots {}
+interface Exercise2Interface {}
 
 class Toy {
   // Comment out the following default constructor
@@ -16,7 +17,7 @@ class Toy {
 }
 
 class FancyToy extends Toy
-implements HasBatteries, Waterproof, Shoots {
+implements HasBatteries, Waterproof, Shoots, Exercise2Interface {
   FancyToy() { super(1); }
 }
 
