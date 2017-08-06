@@ -44,14 +44,15 @@ public class Shapes {
                 Rhomboid mR = new Rhomboid();
                 Shape mS = (Shape)mR;
                 System.out.println("Rhomboid upto Shape : " + mS);
-                Rhomboid mRother = (Rhomboid)mS;
-                System.out.println("Shape upto Rhomboid: " + mRother);
-                try {
+                if (mS instanceof Rhomboid) {
+                        Rhomboid mRother = (Rhomboid)mS;
+                        System.out.println("Shape downto Rhomboid: " + mRother);
+                }
+                if (mS instanceof Circle) {
                         Circle mC = (Circle)mS;
                         System.out.println("Shape upto Circle: " + mC);
-                }catch(ClassCastException e){
-                        System.out.println("Shape upto Circle: fail");
-                        e.printStackTrace();
+                } else {
+                        System.out.println("Shape can not downto Circle.");
                 }
         }
 } /* Output:
