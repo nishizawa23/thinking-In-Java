@@ -15,6 +15,7 @@ public class ShowMethods {
     "ShowMethods qualified.class.name word\n" +
     "To search for methods involving 'word'";
   private static Pattern p = Pattern.compile("(\\w+\\.)|final|native");
+  private ShowMethods(){}
   public static void main(String[] args) {
     if(args.length < 1) {
       print(usage);
@@ -28,7 +29,7 @@ public class ShowMethods {
       if(args.length == 1) {
         for(Method method : methods)
           print(
-              p.matcher(method.toString()).replaceAll(""));
+            p.matcher(method.toString()).replaceAll(""));
         for(Constructor ctor : ctors)
           print(p.matcher(ctor.toString()).replaceAll(""));
         lines = methods.length + ctors.length;
