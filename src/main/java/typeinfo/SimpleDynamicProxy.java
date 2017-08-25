@@ -11,6 +11,20 @@ class DynamicProxyHandler implements InvocationHandler {
         public Object
         invoke(Object proxy, Method method, Object[] args)
         throws Throwable {
+                /*
+                 * trying to print proxy leads to:
+                 * StackOverFlowError
+                 * at AbstractStringBuilder.<init>(Unknown Source)
+                 * at StringBuilder.<init>(Unknown Source)
+                 * at DynamicProxyHandler.invoke(SimpleDynamicProxy23.java)
+                 * at $Proxy0.toString(Unknown Source)
+                 * at String.valueOf(Unknown Source)
+                 * at StrinbBuilcer.append(Unknown Source)
+                 * at DynamicProxyHandler.invoke(SimpleDynamicProxy23.java), etc,
+                 * probably due to infinite recursion because calls to toString()
+                 * are passed repeatedly back to this invoke method
+                 */
+                // System.out.println("proxy: " + proxy); // error
                 long timeIn = new Date().getTime();
                 System.out.println("**** proxy: " + proxy.getClass() +
                                    ", method: " + method + ", args: " + args +
