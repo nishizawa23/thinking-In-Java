@@ -20,6 +20,7 @@ class Part {
     partFactories.add(new FanBelt.Factory());
     partFactories.add(new PowerSteeringBelt.Factory());
     partFactories.add(new GeneratorBelt.Factory());
+    partFactories.add(new NullPart.Factory());
   }
   private static Random rand = new Random(47);
   public static Part createRandom() {
@@ -27,6 +28,13 @@ class Part {
     return partFactories.get(n).create();
   }
 }	
+
+class NullPart extends Part{
+  public static class Factory
+  implements typeinfo.factory.Factory<NullPart> {
+    public NullPart create() { return new NullPart(); }
+  }
+}
 
 class Filter extends Part {}
 
