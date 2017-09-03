@@ -3,11 +3,11 @@ package generics; /* Added by Eclipse.py */
 // A stack implemented with an internal linked structure.
 
 public class LinkedStack<T> {
-  private static class Node<U> {
-    U item;
-    Node<U> next;
+  private static class Node<T> {
+    T item;
+    Node<T> next;
     Node() { item = null; next = null; }
-    Node(U item, Node<U> next) {
+    Node(T item, Node<T> next) {
       this.item = item;
       this.next = next;
     }
